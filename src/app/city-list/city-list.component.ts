@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Routes, Router } from '@angular/router';
-import { ICity } from '../city/city';
+import { City } from '../city/city';
 import { CityService } from '../city.service';
 
 @Component({
@@ -14,7 +14,7 @@ import { CityService } from '../city.service';
 })
 export class CityListComponent implements OnInit {
 
-  private cities : ICity[];
+  private cities : City[];
   constructor(private routes:Router,private route: ActivatedRoute, private _cityService: CityService) { }
 
   ngOnInit() {
