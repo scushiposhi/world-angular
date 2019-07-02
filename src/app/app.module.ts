@@ -1,27 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { CityService } from './city.service';
 import { CountryService } from './country.service';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
-import {AppRoutingModule, routeComponent} from './app-routing.module';
+import { AppRoutingModule, ROUTE_COMPONENTS } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    routeComponent,
+    ROUTE_COMPONENTS,
   ],
   imports: [
-    BrowserModule, 
+    BrowserModule,
     RouterModule,
-    HttpClientModule, 
+    HttpClientModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [CityService,CountryService],
+  providers: [CityService, CountryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

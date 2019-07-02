@@ -20,5 +20,5 @@ const routes: Routes = [
     exports:[RouterModule]
 })
 export class AppRoutingModule{}
-export const routeComponent = 
+export const ROUTE_COMPONENTS = 
 [ContinentListComponent,CountryListComponent,CityListComponent,CityComponent,PageNotFoundComponent]
