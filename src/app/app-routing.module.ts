@@ -5,14 +5,15 @@ import {CountryListComponent} from './country-list/country-list.component'
 import {ContinentListComponent} from './continent-list/continent-list.component'
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CityComponent } from './city/city.component';
+import { TutorialComponent } from './tutorial/tutorial.component';
 
 const routes: Routes = [
     {path:'',redirectTo: 'continents' , pathMatch:'full'},
     { path: 'continents', component: ContinentListComponent },
     { path: 'countries/:continent', component: CountryListComponent},
     { path: 'cities/:code', component: CityListComponent},
-    { path: 'city/:id', component: CityComponent}
-     //{path: '**', component:PageNotFoundComponent}
+    { path: 'city/:id', component: CityComponent},
+    {path: 'tutorial', component: TutorialComponent}
   ];
 
 @NgModule({

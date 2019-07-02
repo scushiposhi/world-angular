@@ -8,11 +8,15 @@ import { CountryService } from './country.service';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule, ROUTE_COMPONENTS } from './app-routing.module';
+import { TutorialComponent } from './tutorial/tutorial.component';
+import { AlertButtonComponent } from './alert-button/alert-button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ROUTE_COMPONENTS,
+    TutorialComponent,
+    AlertButtonComponent,
   ],
   imports: [
     BrowserModule,
