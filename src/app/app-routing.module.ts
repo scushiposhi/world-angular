@@ -7,7 +7,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { CityComponent } from './city/city.component';
 
 const routes: Routes = [
-    //{path:'/',redirectTo: 'continents' , pathMatch:'full'},
+    {path:'',redirectTo: 'continents' , pathMatch:'full'},
     { path: 'continents', component: ContinentListComponent },
     { path: 'countries/:continent', component: CountryListComponent},
     { path: 'cities/:code', component: CityListComponent},

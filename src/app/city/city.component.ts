@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ICity } from './city';
+import { City } from './city';
 import { CityService } from '../city.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-city',
   template: `
-  <div>
+  <div *ngIf="loaded">
   id:<input readonly type="text" value={{citta.id}}><br>
   nome:<input type="text" [(ngModel)]=citta.name value={{citta.name}}><br>
   code:<input type="text" [(ngModel)]=citta.countryCode  value={{citta.countryCode}}><br>
@@ -20,21 +20,33 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CityComponent implements OnInit {
 
-  private citta : ICity;
+  citta: City;
+  loaded: boolean;
 
-  constructor(private _cityService:CityService, private route:ActivatedRoute,private routes:Router) { }
+  constructor(private _cityService: CityService, private route: ActivatedRoute, private routes: Router) { }
 
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get('id');
-    this._cityService.getCityById(id).subscribe((response)=>{this.citta=response});
+    this.loaded = false;
+    this.loadCity(id);
   }
-  deleteCity(id){
-    this._cityService.deleteCityById(id).subscribe((response)=>{this.citta=response}); 
+
+  loadCity(id) {
+    this.loaded = false;
+    this._cityService.getCityById(id).subscribe((response) => {
+      this.citta = response;
+      this.loaded = true;
+    });
   }
-  postCity(){
-    this._cityService.postCityService(this.citta).subscribe((response)=>{this.citta=response})
+
+
+  deleteCity(id) {
+    this._cityService.deleteCityById(id).subscribe((response) => { this.citta = response });
   }
-  putCity(){
-    this._cityService.putCityService(this.citta).subscribe((response)=>{this.citta=response})
+  postCity() {
+    this._cityService.postCityService(this.citta).subscribe((response) => { this.citta = response })
+  }
+  putCity() {
+    this._cityService.putCityService(this.citta).subscribe((response) => { this.citta = response })
   }
 }
