@@ -116,5 +116,29 @@
         }
       }
     }},
-  "defaultProject": "world"
+  "defaultProject": "world",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "css",
+      "spec": false
+    },
+    "@schematics/angular:class": {
+      "spec": false
+    },
+    "@schematics/angular:directive": {
+      "spec": false
+    },
+    "@schematics/angular:guard": {
+      "spec": false
+    },
+    "@schematics/angular:module": {
+      "spec": false
+    },
+    "@schematics/angular:pipe": {
+      "spec": false
+    },
+    "@schematics/angular:service": {
+      "spec": false
+    }
+  }
 }
