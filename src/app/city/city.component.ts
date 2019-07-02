@@ -36,7 +36,9 @@ export class CityComponent implements OnInit {
     this._cityService.getCityById(id).subscribe((response) => {
       this.citta = response;
       this.loaded = true;
+      console.log("ARRIVATO SECONDO");
     });
+    console.log("ARRIVATO PRIMO");
   }
 
 
