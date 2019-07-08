@@ -15,7 +15,7 @@ export class CityListComponent implements OnInit {
   constructor(private location : Location,private routes: Router, private route: ActivatedRoute, private _cityService: CityService) { }
 
   //ngOnInit viene eseguito solo alla creazione del component
-  ngOnInit() {//questo motodo lo snapshot non viene aggiornato in caso di next previous
+  ngOnInit() {//lo snapshot non viene aggiornato in caso di next o previous
     let code = this.route.snapshot.paramMap.get('code');
     this._cityService.getCitiesByCode(code).subscribe((response) => { this.cities = response });
     /*soluzione:
