@@ -3,6 +3,8 @@ import { ActivatedRoute, Routes, Router, ParamMap } from '@angular/router';
 import { City } from '../city/city';
 import { CityService } from '../city.service';
 import { Location } from '@angular/common';
+import { CityComponent } from '../city/city.component';
+
 
 @Component({
   selector: 'app-city-list',
@@ -11,8 +13,12 @@ import { Location } from '@angular/common';
 })
 export class CityListComponent implements OnInit {
 
+  //private city : CityComponent;
   private cities: City[];
-  constructor(private location : Location,private routes: Router, private route: ActivatedRoute, private _cityService: CityService) { }
+  constructor(private location : Location,
+              private routes: Router,
+              private route: ActivatedRoute, 
+              private _cityService: CityService) { }
 
   //ngOnInit viene eseguito solo alla creazione del component
   ngOnInit() {//lo snapshot non viene aggiornato in caso di next o previous
@@ -28,6 +34,7 @@ export class CityListComponent implements OnInit {
   }
   goBack(){
     this.location.back();
+    this.routes.navigate(['/country', ]);
   }
-
+ 
 }

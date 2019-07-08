@@ -11,13 +11,17 @@ import { Location } from '@angular/common';
 })
 export class CountryListComponent implements OnInit {
 
+  public continente : string;
   private countries: Country[];
-  constructor(private location: Location, private route: ActivatedRoute, private routes: Router, private _countryService: CountryService) { }
+  constructor(private location: Location,
+              private route: ActivatedRoute, 
+              private routes: Router, 
+              private _countryService: CountryService) { }
 
   ngOnInit() {
 
-    let continente = this.route.snapshot.paramMap.get('continent');
-    this._countryService.getCountries(continente).subscribe((response) => { this.countries = response });
+    this.continente = this.route.snapshot.paramMap.get('continent');
+    this._countryService.getCountries(this.continente).subscribe((response) => { this.countries = response });
 
   }
   onSelect(countryCode) {
