@@ -1,28 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Routes, Router } from '@angular/router';
+import { ActivatedRoute, Routes, Router, ParamMap } from '@angular/router';
 import { City } from '../city/city';
 import { CityService } from '../city.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-city-list',
-  template: `
-  <div (click)="onSelect(city.id)" *ngFor = "let city of cities">
-  <button>{{city.name}}</button>
-  </div>
-  `,
+  templateUrl: 'city-list.component.html',
   styles: []
 })
 export class CityListComponent implements OnInit {
 
-  private cities : City[];
-  constructor(private routes:Router,private route: ActivatedRoute, private _cityService: CityService) { }
+  private cities: City[];
+  constructor(private location : Location,private routes: Router, private route: ActivatedRoute, private _cityService: CityService) { }
 
-  ngOnInit() {
-    let code = this.route.snapshot.paramMap. get('code');
-    this._cityService.getCitiesByCode(code).subscribe((response)=>{this.cities=response});
+  //ngOnInit viene eseguito solo alla creazione del component
+  ngOnInit() {//questo motodo lo snapshot non viene aggiornato in caso di next previous
+    let code = this.route.snapshot.paramMap.get('code');
+    this._cityService.getCitiesByCode(code).subscribe((response) => { this.cities = response });
+    /*soluzione:
+      this.route.paramMap.subscribe((params:ParamMap)=>
+    {let code = params.get('code') });
+     */
   }
-  onSelect(id){
-    this.routes.navigate(['/city',id]);
+  onSelect(id) {
+    this.routes.navigate(['/city', id]);
+  }
+  goBack(){
+    this.location.back();
   }
 
 }

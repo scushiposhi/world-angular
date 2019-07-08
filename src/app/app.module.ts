@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule, ROUTE_COMPONENTS } from './app-routing.module';
 import { TutorialComponent } from './tutorial/tutorial.component';
 import { AlertButtonComponent } from './alert-button/alert-button.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { AlertButtonComponent } from './alert-button/alert-button.component';
     ROUTE_COMPONENTS,
     TutorialComponent,
     AlertButtonComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

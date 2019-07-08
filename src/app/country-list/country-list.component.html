@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="card" *ngFor="let country of countries" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{country.name}}</h5>
+                <h6 class="card-subtitle">{{country.continent}}</h6>
+                <p class="card-text">numero di abitanti:{{country.population}}</p>
+                
+                <a href="/cities/{{country.code}}">cities</a>
+                <!--<button>{{city.name}}</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+<a href="javascript:void(0)" (click)="goBack()">back </a>
+<!--  <div (click)="onSelect(country.code)" *ngFor = "let country of countries">
+  <button>{{country.name}}</button>
+  </div>-->
