@@ -1,20 +1,29 @@
 import { Injectable } from '@angular/core';
-
+import {CountryService} from './country.service'
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { City } from './city/city';
+import { Country } from './country';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CityService {
 
+
+  private countryList : Country[]
   private _url: string = "http://localhost:8080/api/cities";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private countries:CountryService) { }
+
+  getCountries() : Observable<Country[]>{
+   return this.countries.getCountriesAll();
+  }
+
   getCities(): Observable<City[]> {
     return this.http.get<City[]>(this._url);
   }
+  
   getCityById(id): Observable<City> {
     return this.http.get<City>(this._url + "/" + id);
   }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CountryService } from '../country.service';
-import { ICountry } from '../country';
+import { Country } from '../country';
 import { Location } from '@angular/common';
 
 @Component({
@@ -11,7 +11,7 @@ import { Location } from '@angular/common';
 })
 export class CountryListComponent implements OnInit {
 
-  private countries: ICountry[];
+  private countries: Country[];
   constructor(private location: Location, private route: ActivatedRoute, private routes: Router, private _countryService: CountryService) { }
 
   ngOnInit() {

@@ -3,6 +3,7 @@ import { City } from './city';
 import { CityService } from '../city.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
+import {Country} from '../country';
 
 @Component({
   selector: 'app-city',
@@ -13,6 +14,8 @@ export class CityComponent implements OnInit {
 
   citta: City;
   loaded: boolean;
+  code : string [];
+  countries : Country[];
 
   constructor(private location: Location, private _cityService: CityService,
     private route: ActivatedRoute,
@@ -22,6 +25,7 @@ export class CityComponent implements OnInit {
     let id = this.route.snapshot.paramMap.get('id');
     this.loaded = false;
     this.loadCity(id);
+    this._cityService.getCountries().subscribe((response)=>{this.countries=response});
   }
 
   loadCity(id) {
