@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Routes, Router, ParamMap } from '@angular/router';
 import { City } from '../city/city';
 import { CityService } from '../city.service';
@@ -12,8 +12,8 @@ import { CityComponent } from '../city/city.component';
   styles: []
 })
 export class CityListComponent implements OnInit {
-
-  //private city : CityComponent;
+  
+  code:string;
   private cities: City[];
   constructor(private location : Location,
               private routes: Router,
@@ -22,8 +22,8 @@ export class CityListComponent implements OnInit {
 
   //ngOnInit viene eseguito solo alla creazione del component
   ngOnInit() {//lo snapshot non viene aggiornato in caso di next o previous
-    let code = this.route.snapshot.paramMap.get('code');
-    this._cityService.getCitiesByCode(code).subscribe((response) => { this.cities = response });
+    this.code = this.route.snapshot.paramMap.get('code');
+    this._cityService.getCitiesByCode(this.code).subscribe((response) => { this.cities = response });
     /*soluzione:
       this.route.paramMap.subscribe((params:ParamMap)=>
     {let code = params.get('code') });
@@ -33,8 +33,8 @@ export class CityListComponent implements OnInit {
     this.routes.navigate(['/city', id]);
   }
   goBack(){
-    this.location.back();
-    this.routes.navigate(['/country', ]);
+    //this.location.back();
+    this.routes.navigate(['/countries',this.code ]);
   }
  
 }

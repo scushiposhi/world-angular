@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ContinentListComponent implements OnInit {
 
+  
   private continenti: [];
   constructor(private routes: Router, private _countryService: CountryService) { }
 
