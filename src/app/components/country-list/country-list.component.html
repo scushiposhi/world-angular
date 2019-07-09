@@ -1,18 +1,19 @@
-<div class="container">
-    <div class="row">
-        <div class="card" *ngFor="let country of countries" style="width: 18rem;">
+<button class="custom-back-btn" (click)="goBack()">back </button>
+<div class="row">
+    <div class="col-md-4" *ngFor="let country of countries">
+        <div class="card m-2">
             <div class="card-body">
                 <h5 class="card-title">{{country.name}}</h5>
                 <h6 class="card-subtitle">{{country.continent}}</h6>
                 <p class="card-text">numero di abitanti:{{country.population}}</p>
-                
-                <a href="/cities/{{country.code}}">cities</a>
+
+                <button class="btn btn-outline-primary" [routerLink]="'/cities/'+country.code">cities</button>
                 <!--<button>{{city.name}}</button>-->
             </div>
         </div>
     </div>
 </div>
-<a href="javascript:void(0)" (click)="goBack()">back </a>
+
 <!--  <div (click)="onSelect(country.code)" *ngFor = "let country of countries">
   <button>{{country.name}}</button>
   </div>-->

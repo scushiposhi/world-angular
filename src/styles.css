@@ -4,3 +4,10 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.custom-back-btn {
+    border-style: none;
+    background: transparent;
+    color: blue;
+    text-decoration: underline;
+}
