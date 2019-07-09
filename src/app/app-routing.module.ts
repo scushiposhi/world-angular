@@ -1,11 +1,10 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from '@angular/router';
-import {CityListComponent} from './city-list/city-list.component'
-import {CountryListComponent} from './country-list/country-list.component'
-import {ContinentListComponent} from './continent-list/continent-list.component'
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { CityComponent } from './city/city.component';
-import { TutorialComponent } from './tutorial/tutorial.component';
+import {CityListComponent} from './components/city-list/city-list.component'
+import {CountryListComponent} from './components/country-list/country-list.component'
+import {ContinentListComponent} from './components/continent-list/continent-list.component'
+import { CityComponent } from './components/city/city.component';
+import { TutorialComponent } from './components/tutorial/tutorial.component';
 
 const routes: Routes = [
     {path:'',redirectTo: 'continents' , pathMatch:'full'},
@@ -22,4 +21,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule{}
 export const ROUTE_COMPONENTS = 
-[ContinentListComponent,CountryListComponent,CityListComponent,CityComponent,PageNotFoundComponent]
+[ContinentListComponent,CountryListComponent,CityListComponent,CityComponent]

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { City } from './city';
-import { CityService } from '../city.service';
+import { CityService } from '../../services/city.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { Country } from '../country';
-import { CountryService } from '../country.service';
+import { Country } from '../../country';
+import { CountryService } from '../../services/country.service';
 
 @Component({
   selector: 'app-city',

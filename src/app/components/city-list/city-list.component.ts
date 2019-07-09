@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Routes, Router, ParamMap } from '@angular/router';
 import { City } from '../city/city';
-import { CityService } from '../city.service';
+import { CityService } from '../../services/city.service';
 import { Location } from '@angular/common';
 import { CityComponent } from '../city/city.component';
-import { CountryService } from '../country.service';
+import { CountryService } from '../../services/country.service';
 
 
 @Component({
