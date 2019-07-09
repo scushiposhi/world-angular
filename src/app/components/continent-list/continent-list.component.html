@@ -1,9 +1,3 @@
-<div class="list-group" (click)="onSelect(continente)" *ngFor="let continente of continenti" style="width: 10rem;">
-    <button type="button" class="list-group-item list-group-item-action">{{continente}}</button>
+<div *ngFor="let continente of continenti" class="list-group"  style="width: 10rem;">
+    <button type="button" class="list-group-item list-group-item-action" (click)="onSelect(continente)">{{continente}}</button>
 </div>
-
-<!--`
-    <div (click)="onSelect(continente)" *ngFor = "let continente of continenti">
-    <button>{{continente}}</button>
-    </div>
-  `-->
