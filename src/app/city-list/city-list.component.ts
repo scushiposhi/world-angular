@@ -4,6 +4,7 @@ import { City } from '../city/city';
 import { CityService } from '../city.service';
 import { Location } from '@angular/common';
 import { CityComponent } from '../city/city.component';
+import { CountryService } from '../country.service';
 
 
 @Component({
@@ -34,7 +35,6 @@ export class CityListComponent implements OnInit {
   }
   goBack(){
     this.location.back();
-    this.routes.navigate(['/country', ]);
   }
  
 }

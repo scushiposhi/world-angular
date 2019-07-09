@@ -14,11 +14,7 @@ export class CityService {
   private countryList : Country[]
   private _url: string = "http://localhost:8080/api/cities";
 
-  constructor(private http: HttpClient, private countries:CountryService) { }
-
-  getCountries() : Observable<Country[]>{
-   return this.countries.getCountriesAll();
-  }
+  constructor(private http: HttpClient) { }
 
   getCities(): Observable<City[]> {
     return this.http.get<City[]>(this._url);
