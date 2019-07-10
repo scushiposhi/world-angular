@@ -1,8 +1,12 @@
-<div class="card m-2">
-    <div class="card-body">
-        <h5 class="card-title">{{city.name}}</h5>
-        <h6 class="card-subtitle">{{city.countryCode}}</h6>
-        <p class="card-text">numero di abitanti:{{city.population}}</p>
-        <button type="button" (click)="onSelect(city.id)" class="btn btn-link">detail</button>
+<div class="row">
+    <div class="col-md-4" *ngFor="let city of cities">
+        <div class="card m-2">
+            <div class="card-body">
+                <h5 class="card-title">{{city.name}}</h5>
+                <h6 class="card-subtitle">{{city.countryCode}}</h6>
+                <p class="card-text">numero di abitanti:{{city.population}}</p>
+                <button type="button" (click)="onSelect(city.id)" class="btn btn-link">detail</button>
+            </div>
+        </div>
     </div>
 </div>

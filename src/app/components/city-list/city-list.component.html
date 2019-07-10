@@ -1,6 +1,2 @@
 <button type="button" (click)=goBack() class="btn btn-link">back</button>
-<div class="row">
-    <div class="col-md-4"  *ngFor="let city of cities">
-       <app-city [city]=city></app-city>
-    </div>
-</div>
+<app-city [cities]="cities"></app-city>
