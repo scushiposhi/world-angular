@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {CountryService} from './country.service'
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { City } from '../components/city/city';
+import { City } from '../components/city-form/city';
 import { Country } from '../country';
 
 @Injectable({

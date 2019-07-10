@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Routes, Router, ParamMap } from '@angular/router';
-import { City } from '../city/city';
+import { City } from '../city-form/city';
 import { CityService } from '../../services/city.service';
 import { Location } from '@angular/common';
-import { CityComponent } from '../city/city.component';
+import { CityFormComponent } from '../city-form/city-form.component';
 import { CountryService } from '../../services/country.service';
 
 
@@ -14,7 +14,7 @@ import { CountryService } from '../../services/country.service';
 })
 export class CityListComponent implements OnInit {
 
-  //private city : CityComponent;
+  
   private cities: City[];
   constructor(private location : Location,
               private routes: Router,
@@ -33,6 +33,7 @@ export class CityListComponent implements OnInit {
   onSelect(id) {
     this.routes.navigate(['/city', id]);
   }
+  
   goBack(){
     this.location.back();
   }

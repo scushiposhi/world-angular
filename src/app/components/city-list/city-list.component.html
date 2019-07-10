@@ -1,18 +1,13 @@
-<div class="container">
-    <div class="row">
-
-        <div class="card" *ngFor="let city of cities" style="width: 18rem;">
-            <!--(click)="onSelect(city.id)"-->
+<button type="button" (click)=goBack() class="btn btn-link">back</button>
+<div class="row">
+    <div class="col-md-4"  *ngFor="let city of cities">
+        <div class="card m-2">
             <div class="card-body">
                 <h5 class="card-title">{{city.name}}</h5>
                 <h6 class="card-subtitle">{{city.countryCode}}</h6>
                 <p class="card-text">numero di abitanti:{{city.population}}</p>
-
-                <a href="/city/{{city.id}}">detail</a>
-                <!--<button>{{city.name}}</button>-->
-
+                <button type="button" (click)=onSelect(city.id) class="btn btn-link">detail</button>
             </div>
         </div>
     </div>
 </div>
-<a href="javascript:void(0)" (click)="goBack()">back </a>

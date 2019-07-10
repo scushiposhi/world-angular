@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {CityListComponent} from './components/city-list/city-list.component'
 import {CountryListComponent} from './components/country-list/country-list.component'
 import {ContinentListComponent} from './components/continent-list/continent-list.component'
-import { CityComponent } from './components/city/city.component';
+import { CityFormComponent } from './components/city-form/city-form.component';
 import { TutorialComponent } from './components/tutorial/tutorial.component';
 
 const routes: Routes = [
@@ -11,7 +11,7 @@ const routes: Routes = [
     { path: 'continents', component: ContinentListComponent },
     { path: 'countries/:continent', component: CountryListComponent},
     { path: 'cities/:code', component: CityListComponent},
-    { path: 'city/:id', component: CityComponent},
+    { path: 'city/:id', component: CityFormComponent},
     {path: 'tutorial', component: TutorialComponent}
   ];
 
@@ -21,4 +21,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule{}
 export const ROUTE_COMPONENTS = 
-[ContinentListComponent,CountryListComponent,CityListComponent,CityComponent]
+[ContinentListComponent,CountryListComponent,CityListComponent,CityFormComponent]

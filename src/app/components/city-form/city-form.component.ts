@@ -7,11 +7,11 @@ import { Country } from '../../country';
 import { CountryService } from '../../services/country.service';
 
 @Component({
-  selector: 'app-city',
-  templateUrl: 'city.component.html',
+  selector: 'app-city-form',
+  templateUrl: 'city-form.component.html',
   styles: []
 })
-export class CityComponent implements OnInit {
+export class CityFormComponent implements OnInit {
 
   citta: City;
   loaded: boolean;
