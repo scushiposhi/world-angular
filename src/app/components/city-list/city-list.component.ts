@@ -17,7 +17,6 @@ export class CityListComponent implements OnInit {
   
   private cities: City[];
   constructor(private location : Location,
-              private routes: Router,
               private route: ActivatedRoute, 
               private _cityService: CityService) { }
 
@@ -30,10 +29,6 @@ export class CityListComponent implements OnInit {
     {let code = params.get('code') });
      */
   }
-  onSelect(id) {
-    this.routes.navigate(['/city', id]);
-  }
-  
   goBack(){
     this.location.back();
   }

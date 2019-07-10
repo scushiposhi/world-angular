@@ -11,6 +11,7 @@ import { TutorialComponent } from './components/tutorial/tutorial.component';
 import { AlertButtonComponent } from './components/alert-button/alert-button.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CountryComponent } from './components/country/country.component';
+import { CityComponent } from './components/city/city.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CountryComponent } from './components/country/country.component';
     TutorialComponent,
     AlertButtonComponent,
     HeaderComponent,
-    CountryComponent
+    CountryComponent,
+    CityComponent
   ],
   imports: [
     BrowserModule,
