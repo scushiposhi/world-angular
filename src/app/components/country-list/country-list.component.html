@@ -1,13 +1,6 @@
 <button class="custom-back-btn" (click)="goBack()">back </button>
 <div class="row">
     <div class="col-md-4" *ngFor="let country of countries">
-        <div class="card m-2">
-            <div class="card-body">
-                <h5 class="card-title">{{country.name}}</h5>
-                <h6 class="card-subtitle">{{country.continent}}</h6>
-                <p class="card-text">numero di abitanti:{{country.population}}</p>
-                <button class="btn btn-outline-primary" [routerLink]="'/cities/'+country.code">cities</button>
-            </div>
-        </div>
+        <app-country [country]="country"></app-country>
     </div>
 </div>

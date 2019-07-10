@@ -10,6 +10,7 @@ import { AppRoutingModule, ROUTE_COMPONENTS } from './app-routing.module';
 import { TutorialComponent } from './components/tutorial/tutorial.component';
 import { AlertButtonComponent } from './components/alert-button/alert-button.component';
 import { HeaderComponent } from './components/header/header.component';
+import { CountryComponent } from './components/country/country.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HeaderComponent } from './components/header/header.component';
     ROUTE_COMPONENTS,
     TutorialComponent,
     AlertButtonComponent,
-    HeaderComponent
+    HeaderComponent,
+    CountryComponent
   ],
   imports: [
     BrowserModule,
