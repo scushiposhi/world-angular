@@ -6,14 +6,8 @@
                 <h5 class="card-title">{{country.name}}</h5>
                 <h6 class="card-subtitle">{{country.continent}}</h6>
                 <p class="card-text">numero di abitanti:{{country.population}}</p>
-
                 <button class="btn btn-outline-primary" [routerLink]="'/cities/'+country.code">cities</button>
-                <!--<button>{{city.name}}</button>-->
             </div>
         </div>
     </div>
 </div>
-
-<!--  <div (click)="onSelect(country.code)" *ngFor = "let country of countries">
-  <button>{{country.name}}</button>
-  </div>-->
