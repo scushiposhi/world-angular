@@ -18,17 +18,19 @@ export class CityFormComponent implements OnInit {
   code: string[];
   countries: Country[];
 
-  constructor(private location: Location,
-              private _cityService: CityService,
-              private route: ActivatedRoute,
-              private routes: Router,
-              private countryService:CountryService) { }
+  constructor(
+    private location: Location,
+    private _cityService: CityService,
+    private route: ActivatedRoute,
+    private routes: Router,
+    private countryService: CountryService,
+    private cityService:CityService) { }
 
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get('id');
     this.loaded = false;
     this.loadCity(id);
-    this.countryService.getCountriesAll().subscribe((response)=>{this.countries=response});
+    this.countryService.getCountriesAll().subscribe((response) => { this.countries = response });
   }
 
   loadCity(id) {
@@ -49,7 +51,7 @@ export class CityFormComponent implements OnInit {
   }
 
   goBack() {
-    this.routes.navigate(['/cities', this.citta.countryCode]);
+    this.routes.navigate(['/cities', this.cityService.getCode()]);
   }
   newCity() {
     this.loadCity(0);

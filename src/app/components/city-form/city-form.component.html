@@ -28,38 +28,12 @@
                     placeholder="population">
             </div>
         </div>
+
         <div class="btn-goup" aria-label="basic" role="group">
-            <a href="javascript:void(0)" (click)="goBack()">back </a>
-            <a href="javascript:void(0)" (click)="deleteCity(citta.id)">delete </a>
-            <a href="javascript:void(0)" (click)="putCity()">save </a>
-            <a href="javascript:void(0)" (click)="newCity()">add </a>
-            <!--
-                <div class="btn-goup" aria-label="basic" role="group">
-            <button type="button" class="btn btn-primary" (click)=deleteCity(citta.id)>delete</button>
-            <button type="button" class="btn btn-secondary" (click)=putCity()>put</button>
-            <button type="button" class="btn btn-light" (click)=postCity()>post</button>
-            -->
+            <button type="button" class="btn btn-link" (click)="goBack()">back</button>
+            <button type="button" class="btn btn-link" (click)="deleteCity(citta.id)">delete</button>
+            <button type="button" class="btn btn-link" (click)="putCity()">save</button>
+            <button type="button" class="btn btn-link" (click)="newCity()">add</button>
         </div>
     </form>
 </div>
-
-
-<!--
-<div class="input-group mb-3">
-    <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroup-sizing-default">id</span>
-    </div>
-    <input type="text" class="form-control" readonly aria-label="Sizing example input"
-        aria-describedby="inputGroup-sizing-default">
-</div>
-
-<div class="input-group input-group-sm mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
-        </div>
-        <input type="text" 
-        class="form-control" 
-        aria-label="Sizing example input" 
-        aria-describedby="inputGroup-sizing-sm">
-      </div>
-      -->

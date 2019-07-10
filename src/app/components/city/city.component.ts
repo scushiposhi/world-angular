@@ -11,10 +11,11 @@ export class CityComponent implements OnInit {
 
   @Input() cities : City[];
   constructor(private routes:Router,
-              private route : ActivatedRoute ) { }
+             // private route : ActivatedRoute
+               ) { }
 
   ngOnInit() {
-    let code = this.route.snapshot.paramMap.get('code');
+   // let code = this.route.snapshot.paramMap.get('code');
   }
   onSelect(id) {
     this.routes.navigate(['/city', id]);

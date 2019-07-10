@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {CountryService} from './country.service'
+import { CountryService } from './country.service'
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { City } from '../components/city-form/city';
@@ -10,16 +10,23 @@ import { Country } from '../country';
 })
 export class CityService {
 
-
-  private countryList : Country[]
+  private code: string = '';
+  private countryList: Country[]
   private _url: string = "http://localhost:8080/api/cities";
 
   constructor(private http: HttpClient) { }
 
+  setCode(codice: string) {
+    this.code = codice;
+  }
+  getCode(): string {
+    return this.code;
+  }
+
   getCities(): Observable<City[]> {
     return this.http.get<City[]>(this._url);
   }
-  
+
   getCityById(id): Observable<City> {
     return this.http.get<City>(this._url + "/" + id);
   }

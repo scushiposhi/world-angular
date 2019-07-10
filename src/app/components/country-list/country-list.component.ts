@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CountryService } from '../../services/country.service';
 import { Country } from '../../country';
-import { Location } from '@angular/common';
+import { CityService } from 'src/app/services/city.service';
 
 @Component({
   selector: 'app-country-list',
@@ -11,24 +11,24 @@ import { Location } from '@angular/common';
 })
 export class CountryListComponent implements OnInit {
 
-  public continente : string;
   private countries: Country[];
-  constructor(private location: Location,
-              private route: ActivatedRoute, 
-              private routes: Router, 
-              private _countryService: CountryService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private routes: Router,
+    private countryService: CountryService,
+    private cityService: CityService) { }
 
   ngOnInit() {
-
-    this.continente = this.route.snapshot.paramMap.get('continent');
-    this._countryService.getCountries(this.continente).subscribe((response) => { this.countries = response });
+    let continente = this.route.snapshot.paramMap.get('continent');
+    this.countryService.getCountries(continente).subscribe((response) => { this.countries = response });
 
   }
   onSelect(countryCode) {
+    this.cityService.setCode(countryCode);
     this.routes.navigate(['/cities', countryCode]);
   }
   goBack() {
-    this.location.back();
+    this.routes.navigate(['/continents']);
   }
 
 }
