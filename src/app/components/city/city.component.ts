@@ -9,7 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class CityComponent implements OnInit {
 
-  @Input() cities : City[];
+  @Input() city : City;
   constructor(private routes:Router,
              // private route : ActivatedRoute
                ) { }

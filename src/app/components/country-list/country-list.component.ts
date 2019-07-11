@@ -15,8 +15,8 @@ export class CountryListComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private routes: Router,
-    private countryService: CountryService,
-    private cityService: CityService) { }
+    private countryService: CountryService
+  ) { }
 
   ngOnInit() {
     let continente = this.route.snapshot.paramMap.get('continent');
@@ -24,7 +24,7 @@ export class CountryListComponent implements OnInit {
 
   }
   onSelect(countryCode) {
-    this.cityService.setCode(countryCode);
+    this.countryService.setCode(countryCode);
     this.routes.navigate(['/cities', countryCode]);
   }
   goBack() {

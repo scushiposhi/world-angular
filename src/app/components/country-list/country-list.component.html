@@ -1,2 +1,6 @@
 <button class="custom-back-btn" (click)="goBack()">back </button>
-<app-country [countries]="countries"></app-country>
+<div class="row">
+    <div class="col-md-4" *ngFor="let countrY of countries">
+        <app-country [country]="countrY"></app-country>
+    </div>
+</div>

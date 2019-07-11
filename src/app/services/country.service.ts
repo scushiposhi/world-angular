@@ -9,11 +9,18 @@ import { Country } from '../country';
 })
 export class CountryService {
 
+  private code: string = '';
   private continent: string = '';
   private _urlContinents = "http://localhost:8080/api/continents";
   private _urlCountry = "http://localhost:8080/api/countries";
   constructor(private http: HttpClient) { }
 
+  setCode(codice: string) {
+    this.code = codice;
+  }
+  getCode(): string {
+    return this.code;
+  }
   setContinent(continente: string) {
     this.continent = continente;
   }

@@ -10,18 +10,10 @@ import { Country } from '../country';
 })
 export class CityService {
 
-  private code: string = '';
-  private countryList: Country[]
+  
   private _url: string = "http://localhost:8080/api/cities";
 
   constructor(private http: HttpClient) { }
-
-  setCode(codice: string) {
-    this.code = codice;
-  }
-  getCode(): string {
-    return this.code;
-  }
 
   getCities(): Observable<City[]> {
     return this.http.get<City[]>(this._url);

@@ -15,12 +15,11 @@ export class CityFormComponent implements OnInit {
 
   citta: City;
   loaded: boolean;
-  code: string[];
+  //code: string[];
   countries: Country[];
 
   constructor(
     private location: Location,
-    private _cityService: CityService,
     private route: ActivatedRoute,
     private routes: Router,
     private countryService: CountryService,
@@ -39,7 +38,7 @@ export class CityFormComponent implements OnInit {
       this.citta = new City;
       this.loaded = true;
     } else {
-      this._cityService.getCityById(id).subscribe((response) => {
+      this.cityService.getCityById(id).subscribe((response) => {
         this.citta = response;
         this.loaded = true;
         console.log("ARRIVATO SECONDO");
@@ -51,24 +50,24 @@ export class CityFormComponent implements OnInit {
   }
 
   goBack() {
-    this.routes.navigate(['/cities', this.cityService.getCode()]);
+    this.routes.navigate(['/cities', this.countryService.getCode()]);
   }
   newCity() {
     this.loadCity(0);
   }
 
   deleteCity(id) {
-    this._cityService.deleteCityById(id).subscribe((response) => { this.citta = response });
+    this.cityService.deleteCityById(id).subscribe((response) => { this.citta = response });
     this.routes.navigate(['/cities', this.citta.countryCode]);
   }
 
   putCity() {
     if (this.citta.id !== 0 && this.citta.id !== null && this.citta.id !== undefined) {
       this.loadCity(this.citta.id);
-      this._cityService.putCityService(this.citta).subscribe((response) => { this.citta = response })
+      this.cityService.putCityService(this.citta).subscribe((response) => { this.citta = response })
     }
     else {
-      this._cityService.postCityService(this.citta).subscribe((response) => { this.citta = response })
+      this.cityService.postCityService(this.citta).subscribe((response) => { this.citta = response })
     }
     this.routes.navigate(['/cities', this.citta.countryCode]);
   }
